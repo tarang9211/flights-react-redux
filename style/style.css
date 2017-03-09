@@ -1,0 +1,19 @@
+.col-3 {
+  flex: 3;
+}
+
+.col-6 {
+  flex: 6;
+}
+
+.col-9 {
+  flex: 9;
+}
+
+.col-12 {
+  width: 100%;
+}
+
+.row {
+  display: flex;
+}
