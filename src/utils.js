@@ -1,12 +1,14 @@
 import { flights } from './data';
 
 export const filterOneWayFlights = (filter, type) => {
+  console.log(filter);
   return flights.filter(flight => {
     const sameDepartureDate = flight.departureDate === filter.departureDate;
     const sameOrigin = flight.origin === filter.origin;
     const sameDestination = flight.destination === filter.destination;
     const sameType = flight.type === type;
-    return sameDepartureDate && sameOrigin && sameDestination && sameType;
+    const fare = flight.fare <= filter.fare;
+    return sameDepartureDate && sameOrigin && sameDestination && sameType && fare;
   });
 };
 

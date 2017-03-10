@@ -11,7 +11,8 @@ class OneWayForm extends Component {
       origin: "",
       destination: "",
       departureDate: "",
-      numberOfPassengers: 0
+      numberOfPassengers: 0,
+      fare: 20000
     };
   }
 
@@ -21,6 +22,11 @@ class OneWayForm extends Component {
         [state]: e.target.value
       });
     }
+
+  handleSliderChange = e => {
+    console.log('fare ---', e.target.value);
+    this.setState({ fare: parseInt(e.target.value) });
+  }
 
   handleSubmit = e => {
     e.preventDefault();
@@ -33,14 +39,16 @@ class OneWayForm extends Component {
       origin,
       destination,
       departureDate,
-      numberOfPassengers
+      numberOfPassengers,
+      fare
     } = this.state;
 
     this.props.filterOneWaySearchResults({
       origin,
       destination,
       departureDate,
-      numberOfPassengers
+      numberOfPassengers,
+      fare
     });
   }
 
@@ -93,6 +101,17 @@ class OneWayForm extends Component {
               value={this.state.numberOfPassengers}
               onChange={this.handleOnChange("numberOfPassengers")} placeholder="Number of passengers"
               required
+            />
+          </div>
+
+          <div className="group">
+            <input
+              type="range"
+              onChange={this.handleSliderChange}
+              min={5000}
+              max={20000}
+              step={500}
+              value={this.state.fare}
             />
           </div>
 
