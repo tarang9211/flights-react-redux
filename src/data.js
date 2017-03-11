@@ -14,8 +14,9 @@ export const flights = [
     origin: 'Pune',
     destination: 'Delhi',
     fare: 5000,
+    duration: "2H 05M",
     departureDate: moment().format('DD MM YYYY'),
-    arrivalTime: moment().format('DD MM YYYY'),
+    arrivalTime: moment().add('2', 'hours')
   },
   {
     type: 'one-way',
@@ -24,8 +25,9 @@ export const flights = [
     origin: 'Pune',
     destination: 'Delhi',
     fare: 5500,
+    duration: "2H 05M",
     departureDate: moment().format('DD MM YYYY'),
-    arrivalTime: moment().format('DD MM YYYY'),
+    arrivalTime: moment().add('2', 'hours')
   },
   {
     type: 'one-way',
@@ -34,8 +36,9 @@ export const flights = [
     origin: 'Pune',
     destination: 'Delhi',
     fare: 5750,
+    duration: "2H 05M",
     departureDate: moment().format('DD MM YYYY'),
-    arrivalTime: moment().format('DD MM YYYY'),
+    arrivalTime: moment().add('2', 'hours')
   },
   {
     type: 'one-way',
@@ -44,8 +47,9 @@ export const flights = [
     origin: 'Pune',
     destination: 'Delhi',
     fare: 7000,
+    duration: "1H 55M",
     departureDate: moment().format('DD MM YYYY'),
-    arrivalTime: moment().format('DD MM YYYY'),
+    arrivalTime: moment().add('2', 'hours')
   },
   {
     type: 'one-way',
@@ -54,8 +58,9 @@ export const flights = [
     origin: 'Pune',
     destination: 'Delhi',
     fare: 9000,
+    duration: "1H 55M",
     departureDate: moment().format('DD MM YYYY'),
-    arrivalTime: moment().format('DD MM YYYY'),
+    arrivalTime: moment().add('2', 'hours')
   },
   {
     type: 'one-way',
@@ -64,8 +69,9 @@ export const flights = [
     origin: 'Pune',
     destination: 'Delhi',
     fare: 12000,
+    duration: "2H 05M",
     departureDate: moment().format('DD MM YYYY'),
-    arrivalTime: moment().format('DD MM YYYY'),
+    arrivalTime: moment().add('2', 'hours')
   },
   {
     type: 'one-way',
@@ -74,8 +80,9 @@ export const flights = [
     origin: 'Pune',
     destination: 'Delhi',
     fare: 13000,
+    duration: "2H 05M",
     departureDate: moment().format('DD MM YYYY'),
-    arrivalTime: moment().format('DD MM YYYY'),
+    arrivalTime: moment().add('2', 'hours')
   },
   {
     type: 'one-way',
@@ -84,8 +91,9 @@ export const flights = [
     origin: 'Pune',
     destination: 'Delhi',
     fare: 14500,
+    duration: "2H 05M",
     departureDate: moment().format('DD MM YYYY'),
-    arrivalTime: moment().format('DD MM YYYY'),
+    arrivalTime: moment().add('2', 'hours')
   },
   {
     type: 'one-way',
@@ -94,8 +102,9 @@ export const flights = [
     origin: 'Pune',
     destination: 'Rajasthan',
     fare: 10500,
+    duration: "2H 05M",
     departureDate: moment().format('DD MM YYYY'),
-    arrivalTime: moment().format('DD MM YYYY'),
+    arrivalTime: moment().add('2', 'hours')
   },
   {
     type: 'one-way',
@@ -103,9 +112,43 @@ export const flights = [
     flight_code: 'ER - 901',
     origin: 'Pune',
     destination: 'Rajasthan',
-    fare: 12500,
+    fare: 13500,
+    duration: "2H 05M",
     departureDate: moment().format('DD MM YYYY'),
-    arrivalTime: moment().format('DD MM YYYY'),
+    arrivalTime: moment().add('2', 'hours')
+  },
+  {
+    type: 'one-way',
+    id: 1122,
+    flight_code: 'ER - 901',
+    origin: 'Pune',
+    destination: 'Rajasthan',
+    fare: 14500,
+    duration: "2H 10M",
+    departureDate: moment().format('DD MM YYYY'),
+    arrivalTime: moment().add('2', 'hours')
+  },
+  {
+    type: 'one-way',
+    id: 142,
+    flight_code: 'ER - 901',
+    origin: 'Pune',
+    destination: 'Rajasthan',
+    fare: 11500,
+    duration: "2H 05M",
+    departureDate: moment().format('DD MM YYYY'),
+    arrivalTime: moment().add('2', 'hours')
+  },
+  {
+    type: 'one-way',
+    id: 152,
+    flight_code: 'ER - 901',
+    origin: 'Pune',
+    destination: 'Rajasthan',
+    fare: 12500,
+    duration: "2H 05M",
+    departureDate: moment().format('DD MM YYYY'),
+    arrivalTime: moment().add('2', 'hours')
   },
   {
     type: 'one-way',
@@ -114,8 +157,9 @@ export const flights = [
     origin: 'Pune',
     destination: 'Rajasthan',
     fare: 14000,
+    duration: "2H 05M",
     departureDate: moment().format('DD MM YYYY'),
-    arrivalTime: moment().format('DD MM YYYY'),
+    arrivalTime: moment().add('2', 'hours')
   },
   {
     type: 'one-way',
@@ -124,8 +168,9 @@ export const flights = [
     origin: 'Pune',
     destination: 'Rajasthan',
     fare: 16000,
+    duration: "2H 05M",
     departureDate: moment().format('DD MM YYYY'),
-    arrivalTime: moment().format('DD MM YYYY'),
+    arrivalTime: moment().add('2', 'hours')
   },
   {
     type: 'return',

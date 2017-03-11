@@ -1,4 +1,6 @@
+import moment from 'moment';
 import { flights } from './data';
+
 
 export const filterOneWayFlights = (filter, type) => {
   console.log(filter);
@@ -22,6 +24,10 @@ export const filterReturnFlights = (filter, type) => {
     return sameDepartureDate && sameReturnDate && sameOrigin && sameDestination && sameType;
   });
 };
+
+export const formatHourMinute = date => {
+  return moment(date).format('HH mm');
+}
 
 export const styles = {
   item: {

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import RouteHeader from './route_header';
+import OneWayFlightDetail from './one_way_flight_detail';
 
 class FlightList extends Component {
   componentWillMount() {
@@ -14,9 +16,15 @@ class FlightList extends Component {
       if (flight.type === activeTab) {
         if (flight.type === 'one-way') {
           return (
-            <div key={flight.id}>
-              one way component, {flight.type}, {flight.id}
-            </div>
+            <OneWayFlightDetail
+              key={flight.id}
+              origin={flight.origin}
+              destination={flight.destination}
+              flight_code={flight.flight_code}
+              duration={flight.duration}
+              arrival={flight.arrivalTime}
+              fare={flight.fare}
+            />
         );
         } else {
           return (
@@ -30,8 +38,13 @@ class FlightList extends Component {
   }
 
   render() {
+    const { activeTab, isSearched } = this.props;
+    const flight = this.props.searchResults[0];
     return (
       <div className="flight-list-container">
+        <div className="col-12">
+          <RouteHeader activeTab={activeTab} isSearched={isSearched} flight={flight}/>
+        </div>
         {this.renderFlightList()}
       </div>
     );
@@ -40,7 +53,8 @@ class FlightList extends Component {
 
 const mapStateToProps = state => ({
   searchResults: state.flights.searchResults,
-  activeTab: state.flights.activeTab
+  activeTab: state.flights.activeTab,
+  isSearched: state.flights.isSearched
 })
 
 export default connect(mapStateToProps)(FlightList);

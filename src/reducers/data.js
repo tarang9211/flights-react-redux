@@ -13,7 +13,8 @@ import { flights } from '../data';
 
 const initialState = {
   searchResults: flights,
-  activeTab: 'one-way'
+  activeTab: 'one-way',
+  isSearched: false
 }
 
 export default function (state = initialState, action) {
@@ -27,13 +28,15 @@ export default function (state = initialState, action) {
     case FILTER_ONE_WAY_RESULTS:
       return {
         ...state,
-        searchResults: filterOneWayFlights(action.payload, state.activeTab)
+        searchResults: filterOneWayFlights(action.payload, state.activeTab),
+        isSearched: true
       };
 
     case FILTER_RETURN_RESULTS:
       return {
         ...state,
-        searchResults: filterReturnFlights(action.payload, state.activeTab)
+        searchResults: filterReturnFlights(action.payload, state.activeTab),
+        isSearched: true
       };
 
     default:

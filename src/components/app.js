@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import SearchFilter from './search-filter';
 import FlightList from './flight-list';
+import RouteHeader from './route_header';
 
 export default class App extends Component {
   render() {
@@ -17,7 +18,6 @@ export default class App extends Component {
           <div className="col-9">
             <div className="row">
               <div className="col-12">
-                Flight overview
               </div>
             </div>
             <div className="row">

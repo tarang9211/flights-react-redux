@@ -6,6 +6,10 @@ html, body, .container, .app-container {
   font-family: 'Lato', sans-serif;
 }
 
+.block {
+  display: block;
+}
+
 .col-3 {
   flex: 3;
 }
@@ -61,4 +65,31 @@ html, body, .container, .app-container {
   color: white;
   border-radius: 5px;
   font-weight: 600;
+}
+
+.one_way_list_item {
+  display: flex;
+  align-items: center;
+  height: 60px;
+  border-radius: 0.28571429rem;
+  box-shadow: 1px 1px 10px 0px rgba(0, 0, 0, 0.25);
+  background-color: white;
+  margin: 1.1em 1em;
+  padding: 1em;
+}
+
+.one_way_list_item , .code_info, .origin_info, .destination_info, .duration_info, .fare_info, .book_one_way {
+  flex: 1;
+}
+
+.book_one_way button{
+  width: 50%;
+  color: #ffffff;
+  background-color: #7e42ce;
+  border: none;
+  padding: 0.5em 1em;
+  font-size: 0.85em;
+  border-radius: 2px;
+  cursor: pointer;
+  font-weight: 500;
 }
