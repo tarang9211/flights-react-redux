@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import { formatHourMinute } from '../utils';
 
-const OneWayFlightDetail = ({ flight_code, departureDate, origin, destination, fare, duration, arrival }) => {
+const OneWayFlightDetail = ({ flight_code, departureDate, origin, destination, fare, duration, arrival, }) => {
   return (
     <div className="one_way_list_item">
       <div className="code_info">

@@ -186,7 +186,9 @@ export const flights = [
     route_two_departure: moment().add(7, 'hours'),
     route_two_arrival: moment().add(8, 'hours'),
     departureDate: moment().format('DD MM YYYY'),
-    returnDate: moment().add('1', 'days').format('DD MM YYYY')
+    returnDate: moment().add('1', 'days').format('DD MM YYYY'),
+    route_one_duration: '2h 10m',
+    route_two_duration: '1h 55m'
   },
   {
     type: 'return',
@@ -202,7 +204,9 @@ export const flights = [
     route_two_departure: moment().add(8, 'hours'),
     route_two_arrival: moment().add(9, 'hours'),
     departureDate: moment().add(2, 'hours'),
-    returnDate: moment().add('1', 'days')
+    returnDate: moment().add('1', 'days'),
+    route_one_duration: '2h 10m',
+    route_two_duration: '1h 55m'
   },
   {
     type: 'return',
@@ -218,7 +222,9 @@ export const flights = [
     route_two_departure: moment().add(9, 'hours'),
     route_two_arrival: moment().add(10, 'hours'),
     departureDate: moment().add(3, 'hours'),
-    returnDate: moment().add('2', 'days')
+    returnDate: moment().add('2', 'days'),
+    route_one_duration: '2h 10m',
+    route_two_duration: '1h 55m'
   },
   {
     type: 'return',
@@ -234,6 +240,9 @@ export const flights = [
     route_two_departure: moment().add(8, 'hours'),
     route_two_arrival: moment().add(9, 'hours'),
     departureDate: moment().add(4, 'hours'),
-    returnDate: moment().add('1', 'days')
+    returnDate: moment().add('1', 'days'),
+    route_one_duration: '2h 10m',
+    route_two_duration: '1h 55m'
+
   }
 ];

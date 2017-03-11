@@ -82,7 +82,7 @@ html, body, .container, .app-container {
   flex: 1;
 }
 
-.book_one_way button{
+.book_one_way button, .book_return button{
   width: 50%;
   color: #ffffff;
   background-color: #7e42ce;
@@ -92,4 +92,39 @@ html, body, .container, .app-container {
   border-radius: 2px;
   cursor: pointer;
   font-weight: 500;
+}
+
+.return_list_item {
+  display: flex;
+  align-items: center;
+  height: 120px;
+  border-radius: 0.28571429rem;
+  box-shadow: 1px 1px 10px 0px rgba(0, 0, 0, 0.25);
+  background-color: white;
+  margin: 1.1em 1em;
+  padding: 1em;
+}
+
+.route_one_info, .route_two_info {
+  display: flex;
+  flex: 1;
+  height: 100%;
+  align-items: center;
+}
+
+.route_one_info {
+  margin-right: 1em;
+  border-right: 1px solid rgba(199, 199, 199, 0.58);
+}
+
+.route_one_code,
+.route_one_origin,
+.route_one_destination,
+.route_one_fare,
+.route_two_code,
+.route_two_origin,
+.route_two_destination,
+.route_two_fare,
+.book_return {
+  flex: 1;
 }

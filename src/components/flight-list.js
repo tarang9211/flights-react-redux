@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import RouteHeader from './route_header';
 import OneWayFlightDetail from './one_way_flight_detail';
+import ReturnFlightDetail from './return_flight_detail';
 
 class FlightList extends Component {
   componentWillMount() {
@@ -28,10 +29,17 @@ class FlightList extends Component {
         );
         } else {
           return (
-          <div key={flight.id}>
-            return, {flight.type}, {flight.id}
-          </div>
-        );
+            <div className="return_list_item" key={flight.id}>
+              <ReturnFlightDetail
+                flight={flight}
+                customClass="route_one"
+              />
+              <ReturnFlightDetail
+                flight={flight}
+                customClass="route_two"
+              />
+            </div>
+          );
         }
       }
     });

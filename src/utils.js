@@ -26,7 +26,7 @@ export const filterReturnFlights = (filter, type) => {
 };
 
 export const formatHourMinute = date => {
-  return moment(date).format('HH mm');
+  return moment(date).format('HH:mm');
 }
 
 export const styles = {
