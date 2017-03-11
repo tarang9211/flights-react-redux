@@ -6,6 +6,31 @@ html, body, .container, .app-container {
   font-family: 'Lato', sans-serif;
 }
 
+body {
+  background-color: #f2f3f7;
+}
+
+input, li, li:focus {
+  background-color: transparent !important;
+  box-shadow: none !important;
+
+}
+
+/*disable browser outline*/
+button:focus {
+  outline: none;
+}
+
+.react-tabs [role=tab]:focus:after {
+  background-color: transparent !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+.react-tabs [role=tab]:focus {
+  border-color: #aaa;
+}
+
 .block {
   display: block;
 }
@@ -38,6 +63,15 @@ html, body, .container, .app-container {
   padding-left: 3em;
 }
 
+.flight-list-container {
+  padding-left: 1em;
+  border-left: 1px solid #aaaaaa;
+}
+
+.search-fiter-container {
+  padding-right: 1em;
+}
+
 .group {
   margin-bottom: 4em;
 }
@@ -49,12 +83,13 @@ html, body, .container, .app-container {
 
 .group input {
   border: none;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid rgb(165, 165, 165);
   font-size: 1em;
 }
 
 .group input:focus {
-  border-bottom: 1px solid blue;
+  border-bottom: 1px solid #7614d0;
+  outline: none;
 }
 
 .group button {
@@ -127,4 +162,8 @@ html, body, .container, .app-container {
 .route_two_fare,
 .book_return {
   flex: 1;
+}
+
+.listing_header_all h3 {
+  text-align: center;
 }

@@ -50,7 +50,7 @@ class FlightList extends Component {
     const flight = this.props.searchResults[0];
     return (
       <div className="flight-list-container">
-        <div className="col-12">
+        <div className="col-12 container_header">
           <RouteHeader activeTab={activeTab} isSearched={isSearched} flight={flight}/>
         </div>
         {this.renderFlightList()}
