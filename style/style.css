@@ -1,3 +1,11 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+html, body, .container, .app-container {
+  height: 100%;
+  margin: 0px;
+  font-family: 'Lato', sans-serif;
+}
+
 .col-3 {
   flex: 3;
 }
@@ -16,4 +24,41 @@
 
 .row {
   display: flex;
+}
+
+.header {
+  text-align: center;
+}
+
+.form-container {
+  padding-left: 3em;
+}
+
+.group {
+  margin-bottom: 4em;
+}
+
+.group label {
+  padding-bottom: 0.85em;
+  display: block;
+}
+
+.group input {
+  border: none;
+  border-bottom: 1px solid black;
+  font-size: 1em;
+}
+
+.group input:focus {
+  border-bottom: 1px solid blue;
+}
+
+.group button {
+  padding: 1em;
+  font-size: 1em;
+  background-color: #07bf0d;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  font-weight: 600;
 }
