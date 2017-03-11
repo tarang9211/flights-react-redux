@@ -2,11 +2,8 @@ import moment from 'moment';
 
 export const airports = [
   { name: 'Pune', code: 'PNQ' },
-  { name: 'Mumbai', code: 'BOM' },
-  { name: 'Chennai', code: 'MAA' },
-  { name: 'Delhi', code: 'DEL' },
   { name: 'Rajasthan', code: 'RAJ' },
-  { name: 'Goa', code: 'GOA' }
+  { name: 'Delhi', code: 'DEL' }
 ];
 
 export const flights = [
@@ -16,7 +13,7 @@ export const flights = [
     flight_code: 'PD - 202',
     origin: 'Pune',
     destination: 'Delhi',
-    fare: '9,500',
+    fare: 5000,
     departureDate: moment().format('DD MM YYYY'),
     arrivalTime: moment().format('DD MM YYYY'),
   },
@@ -26,9 +23,9 @@ export const flights = [
     flight_code: 'PQ - 272',
     origin: 'Pune',
     destination: 'Delhi',
-    fare: '7,000',
-    departureDate: moment().add(1, 'hours'),
-    arrivalTime: moment().add(2, 'hours')
+    fare: 5500,
+    departureDate: moment().format('DD MM YYYY'),
+    arrivalTime: moment().format('DD MM YYYY'),
   },
   {
     type: 'one-way',
@@ -36,9 +33,9 @@ export const flights = [
     flight_code: 'PA - 152',
     origin: 'Pune',
     destination: 'Delhi',
-    fare: '8000',
-    departureDate: moment().add(1, 'hours'),
-    arrivalTime: moment().add(2, 'hours')
+    fare: 5750,
+    departureDate: moment().format('DD MM YYYY'),
+    arrivalTime: moment().format('DD MM YYYY'),
   },
   {
     type: 'one-way',
@@ -46,9 +43,9 @@ export const flights = [
     flight_code: 'AZ - 201',
     origin: 'Pune',
     destination: 'Delhi',
-    fare: '8,500',
-    departureDate: moment().add(2, 'hours'),
-    arrivalTime: moment().add(4, 'hours')
+    fare: 7000,
+    departureDate: moment().format('DD MM YYYY'),
+    arrivalTime: moment().format('DD MM YYYY'),
   },
   {
     type: 'one-way',
@@ -56,19 +53,49 @@ export const flights = [
     flight_code: 'EF - 203',
     origin: 'Pune',
     destination: 'Delhi',
-    fare: '10,500',
-    departureDate: moment().add(3, 'hours'),
-    arrivalTime: moment().add(5, 'hours')
+    fare: 9000,
+    departureDate: moment().format('DD MM YYYY'),
+    arrivalTime: moment().format('DD MM YYYY'),
   },
   {
     type: 'one-way',
-    id: 4,
+    id: 390,
+    flight_code: 'EF - 203',
+    origin: 'Pune',
+    destination: 'Delhi',
+    fare: 12000,
+    departureDate: moment().format('DD MM YYYY'),
+    arrivalTime: moment().format('DD MM YYYY'),
+  },
+  {
+    type: 'one-way',
+    id: 33,
+    flight_code: 'EF - 203',
+    origin: 'Pune',
+    destination: 'Delhi',
+    fare: 13000,
+    departureDate: moment().format('DD MM YYYY'),
+    arrivalTime: moment().format('DD MM YYYY'),
+  },
+  {
+    type: 'one-way',
+    id: 37,
+    flight_code: 'EF - 203',
+    origin: 'Pune',
+    destination: 'Delhi',
+    fare: 14500,
+    departureDate: moment().format('DD MM YYYY'),
+    arrivalTime: moment().format('DD MM YYYY'),
+  },
+  {
+    type: 'one-way',
+    id: 300,
     flight_code: 'RE - 204',
     origin: 'Pune',
     destination: 'Rajasthan',
-    fare: '5,500',
-    departureDate: moment().add(4, 'hours'),
-    arrivalTime: moment().add(6, 'hours')
+    fare: 10500,
+    departureDate: moment().format('DD MM YYYY'),
+    arrivalTime: moment().format('DD MM YYYY'),
   },
   {
     type: 'one-way',
@@ -76,9 +103,9 @@ export const flights = [
     flight_code: 'ER - 901',
     origin: 'Pune',
     destination: 'Rajasthan',
-    fare: '5,000',
-    departureDate: moment().add(4, 'hours'),
-    arrivalTime: moment().add(6, 'hours')
+    fare: 12500,
+    departureDate: moment().format('DD MM YYYY'),
+    arrivalTime: moment().format('DD MM YYYY'),
   },
   {
     type: 'one-way',
@@ -86,9 +113,9 @@ export const flights = [
     flight_code: 'QW - 284',
     origin: 'Pune',
     destination: 'Rajasthan',
-    fare: '6,500',
-    departureDate: moment().add(4, 'hours'),
-    arrivalTime: moment().add(6, 'hours')
+    fare: 14000,
+    departureDate: moment().format('DD MM YYYY'),
+    arrivalTime: moment().format('DD MM YYYY'),
   },
   {
     type: 'one-way',
@@ -96,9 +123,9 @@ export const flights = [
     flight_code: 'RT - 504',
     origin: 'Pune',
     destination: 'Rajasthan',
-    fare: '7,000',
-    departureDate: moment().add(4, 'hours'),
-    arrivalTime: moment().add(6, 'hours')
+    fare: 16000,
+    departureDate: moment().format('DD MM YYYY'),
+    arrivalTime: moment().format('DD MM YYYY'),
   },
   {
     type: 'return',

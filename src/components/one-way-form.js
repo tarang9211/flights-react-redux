@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import moment from 'moment';
 import { connect } from 'react-redux';
+import Autocomplete from 'react-autocomplete';
+import { airports } from '../data';
 import { filterOneWaySearchResults } from '../actions/index';
+import { matchStateToTerm, styles } from '../utils';
 
 class OneWayForm extends Component {
   constructor(props) {
@@ -11,16 +14,30 @@ class OneWayForm extends Component {
       origin: "",
       destination: "",
       departureDate: "",
-      numberOfPassengers: 0
+      numberOfPassengers: 0,
+      fare: 20000
     };
+
+    this.destinations = [];
   }
 
-  handleOnChange = state =>
-    e => {
-      this.setState({
-        [state]: e.target.value
-      });
-    }
+  handleOriginSelect = origin => {
+    this.setState({ origin });
+    this.destinations = airports.filter(item => item.name !== origin);
+  }
+
+  handleDestinationSelect = destination => {
+    this.setState({ destination });
+  }
+
+  handleSliderChange = e => {
+    console.log('fare ---', e.target.value);
+    this.setState({ fare: parseInt(e.target.value) });
+  }
+
+  handlePassengerChange = e => {
+    this.setState({ numberOfPassengers: e.target.value });
+  }
 
   handleSubmit = e => {
     e.preventDefault();
@@ -33,14 +50,16 @@ class OneWayForm extends Component {
       origin,
       destination,
       departureDate,
-      numberOfPassengers
+      numberOfPassengers,
+      fare
     } = this.state;
 
     this.props.filterOneWaySearchResults({
       origin,
       destination,
       departureDate,
-      numberOfPassengers
+      numberOfPassengers,
+      fare
     });
   }
 
@@ -56,28 +75,48 @@ class OneWayForm extends Component {
         <form onSubmit={this.handleSubmit}>
 
           <div className="group">
-            <input
-              type="text"
-              value={this.state.origin}
-              placeholder="Enter origin city"
-              onChange={this.handleOnChange("origin")}
-              required
-            />
+            <Autocomplete
+                autoHighlight
+                value={this.state.origin}
+                items={airports}
+                onChange={(event, value) => this.setState({ origin: value })}
+                onSelect={this.handleOriginSelect}
+                renderItem={(item, isHighlighted) => (
+                  <div
+                    style={isHighlighted ? styles.highlightedItem : styles.item}
+                    key={item.abbr}
+                  >{item.name}
+                  </div>
+                  )}
+                getItemValue={item => item.name}
+                shouldItemRender={matchStateToTerm}
+                inputProps={{ placeholder: 'Enter your origin', required: true }}
+              />
           </div>
 
           <div className="group">
-            <input
-              type="text"
-              value={this.state.destination}
-              placeholder="Enter destination city"
-              onChange={this.handleOnChange("destination")}
-              required
-            />
+            <Autocomplete
+                autoHighlight
+                value={this.state.destination}
+                items={airports}
+                onChange={(event, value) => this.setState({ origin: value })}
+                onSelect={this.handleDestinationSelect}
+                renderItem={(item, isHighlighted) => (
+                  <div
+                    style={isHighlighted ? styles.highlightedItem : styles.item}
+                    key={item.abbr}
+                  >{item.name}
+                  </div>
+                  )}
+                getItemValue={item => item.name}
+                shouldItemRender={matchStateToTerm}
+                inputProps={{ placeholder: 'Enter your destination', required: true }}
+              />
           </div>
 
           <div className="group">
             <label>
-              <span>Departure Date:</span>
+              <span>Choose your departure date</span>
             </label>
               <input
                 type="date"
@@ -88,15 +127,31 @@ class OneWayForm extends Component {
           </div>
 
           <div className="group">
+            <label>Enter number of passengers</label>
             <input
               type="number"
               value={this.state.numberOfPassengers}
-              onChange={this.handleOnChange("numberOfPassengers")} placeholder="Number of passengers"
+              onChange={this.handlePassengerChange}
+              placeholder="Number of passengers"
               required
             />
           </div>
 
-          <button type="submit">Search</button>
+          <div className="group">
+            <label>Choose your price range</label>
+            <input
+              type="range"
+              onChange={this.handleSliderChange}
+              min={5000}
+              max={20000}
+              step={500}
+              value={this.state.fare}
+            />
+          </div>
+
+          <div className="group actions">
+            <button type="submit">Search</button>
+          </div>
 
         </form>
       </div>
