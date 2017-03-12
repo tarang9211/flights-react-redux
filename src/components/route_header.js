@@ -8,13 +8,21 @@ const RouteHeader = ({ activeTab, isSearched, flight }) => {
       </div>
     );
   } else {
-    if (activeTab === 'one-way') {
-      return (
-        <h3>{flight.origin} {flight.destination}</h3>
-      );
+    if (flight) {
+      if (activeTab === 'one-way') {
+        return (
+          <h3>{flight.origin} {flight.destination}</h3>
+        );
+      } else {
+        return (
+          <h3>{flight.origin} {flight.destination} - {activeTab}</h3>
+        );
+      }
     } else {
       return (
-        <h3>{flight.origin} {flight.destination} - {activeTab}</h3>
+        <div>
+          <h3>No search results to display for your search!</h3>
+        </div>
       );
     }
   }
