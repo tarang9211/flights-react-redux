@@ -16,8 +16,8 @@ class ReturnForm extends Component {
       departureDate: '',
       returnDate: '',
       numberOfPassengers: 0,
-      route_one_fare: 20000,
-      route_two_fare: 20000
+      routeOneFare: 20000,
+      routeTwoFare: 20000
     };
 
     this.destinations = [];
@@ -62,7 +62,9 @@ class ReturnForm extends Component {
       destination,
       departureDate,
       returnDate,
-      numberOfPassengers
+      numberOfPassengers,
+      routeOneFare,
+      routeTwoFare
     } = this.state;
 
     this.props.filterReturnSearchResults({
@@ -70,7 +72,9 @@ class ReturnForm extends Component {
       destination,
       departureDate,
       returnDate,
-      numberOfPassengers
+      numberOfPassengers,
+      routeOneFare,
+      routeTwoFare
     });
   }
 
@@ -158,24 +162,26 @@ class ReturnForm extends Component {
             <label>Choose route one fare</label>
             <input
               type="range"
-              onChange={this.handleFareChange("route_one_fare")}
+              onChange={this.handleFareChange("routeOneFare")}
               min={5000}
               max={20000}
               step={500}
-              value={this.state.route_one_fare}
+              value={this.state.routeOneFare}
             />
+            <p>Max price: &#8377; {this.state.routeOneFare}</p>
           </div>
 
           <div className="group">
             <label>Choose route two fare</label>
             <input
               type="range"
-              onChange={this.handleFareChange("route_two_fare")}
+              onChange={this.handleFareChange("routeTwoFare")}
               min={5000}
               max={20000}
               step={500}
-              value={this.state.route_two_fare}
+              value={this.state.routeTwoFare}
             />
+            <p>Max price: &#8377; {this.state.routeTwoFare}</p>
           </div>
 
           <div className="group actions">

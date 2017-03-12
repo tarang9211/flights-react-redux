@@ -22,8 +22,10 @@ class OneWayForm extends Component {
   }
 
   handleOriginSelect = origin => {
+    console.log('here');
     this.setState({ origin });
     this.destinations = airports.filter(item => item.name !== origin);
+    console.log(this.destinations);
   }
 
   handleDestinationSelect = destination => {
@@ -98,7 +100,7 @@ class OneWayForm extends Component {
             <Autocomplete
                 autoHighlight
                 value={this.state.destination}
-                items={airports}
+                items={this.destinations}
                 onChange={(event, value) => this.setState({ origin: value })}
                 onSelect={this.handleDestinationSelect}
                 renderItem={(item, isHighlighted) => (
