@@ -15,7 +15,7 @@ const RouteHeader = ({ activeTab, isSearched, flight, results, departureDate, re
   if (!isSearched) {
     return (
       <div className="listing_header_all">
-        <h3>Showing all results for {activeTab} flights!</h3>
+        <h3 className="listing_title">Showing all results for {activeTab} flights!</h3>
       </div>
     );
   } else {
