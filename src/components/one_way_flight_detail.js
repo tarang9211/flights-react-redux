@@ -20,7 +20,9 @@ const OneWayFlightDetail = ({ flightCode, departureDate,
         <span className="block">{duration}</span>
       </div>
       <div className="fare_info">
-        <span className="block">&#8377; {fare}</span>
+        <span className="block">&#8377;
+          <span className="fare_amount">{fare}</span>
+        </span>
       </div>
       <div className="book_one_way">
         <button className="button-book">Book</button>
