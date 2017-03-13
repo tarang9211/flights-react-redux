@@ -15,34 +15,34 @@ const initialState = {
   searchResults: flights,
   activeTab: 'one-way',
   isSearched: false
-}
+};
 
 export default function (state = initialState, action) {
-  switch(action.type) {
-    case SET_TAB:
-      return {
-        ...state,
-        activeTab: action.activeTab,
-        searchResults: state.isSearched === false ? state.searchResults : []
-      };
+  switch (action.type) {
+  case SET_TAB:
+    return {
+      ...state,
+      activeTab: action.activeTab,
+      searchResults: state.isSearched === false ? state.searchResults : []
+    };
 
-    case FILTER_ONE_WAY_RESULTS:
-      return {
-        ...state,
-        searchResults: filterOneWayFlights(action.payload, state.activeTab),
-        isSearched: true,
-        departureDate: action.payload.departureDate
-      };
+  case FILTER_ONE_WAY_RESULTS:
+    return {
+      ...state,
+      searchResults: filterOneWayFlights(action.payload, state.activeTab),
+      isSearched: true,
+      departureDate: action.payload.departureDate
+    };
 
-    case FILTER_RETURN_RESULTS:
-      return {
-        ...state,
-        searchResults: filterReturnFlights(action.payload, state.activeTab),
-        isSearched: true,
-        returnDate: action.payload.returnDate
-      };
+  case FILTER_RETURN_RESULTS:
+    return {
+      ...state,
+      searchResults: filterReturnFlights(action.payload, state.activeTab),
+      isSearched: true,
+      returnDate: action.payload.returnDate
+    };
 
-    default:
-      return state;
+  default:
+    return state;
   }
 }

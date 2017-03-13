@@ -3,7 +3,7 @@ import { flights } from './data';
 
 
 export const filterOneWayFlights = (filter, type) => {
-  return flights.filter(flight => {
+  return flights.filter((flight) => {
     const sameDepartureDate = flight.departureDate === filter.departureDate;
     const sameOrigin = flight.origin === filter.origin;
     const sameDestination = flight.destination === filter.destination;
@@ -14,7 +14,7 @@ export const filterOneWayFlights = (filter, type) => {
 };
 
 export const filterReturnFlights = (filter, type) => {
-  return flights.filter(flight => {
+  return flights.filter((flight) => {
     const sameDepartureDate = flight.departureDate === filter.departureDate;
     const sameReturnDate = flight.returnDate === filter.returnDate;
     const sameOrigin = flight.origin === filter.origin;
@@ -22,13 +22,19 @@ export const filterReturnFlights = (filter, type) => {
     const sameType = flight.type === type;
     const sameRouteOneFare = flight.route_one_fare <= filter.routeOneFare;
     const sameRouteTwoFare = flight.route_two_fare <= filter.routeTwoFare;
-    return sameDepartureDate && sameReturnDate && sameOrigin && sameDestination && sameType && sameRouteOneFare && sameRouteTwoFare;
+    return sameDepartureDate
+    && sameReturnDate
+    && sameOrigin
+    && sameDestination
+    && sameType
+    && sameRouteOneFare
+    && sameRouteTwoFare;
   });
 };
 
-export const formatHourMinute = date => {
-  return moment(date).format('HH:mm');
-}
+export const formatHourMinute = date => (
+  moment(date).format('HH:mm')
+);
 
 export const styles = {
   item: {
