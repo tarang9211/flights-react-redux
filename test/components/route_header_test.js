@@ -32,6 +32,22 @@ describe('RouteHeader', () => {
     expect(component.find('.trip_header_location_info')).to.have.text('Pune →Delhi10 flights found');
   });
 
+  it('should render the title for a searched return query with multiple flights returned', () => {
+    const departureDate = moment();
+    const returnDate = moment();
+    const props = {
+      activeTab: 'return',
+      isSearched: true,
+      results: 10,
+      flight: flights[0],
+      departureDate,
+      returnDate
+    };
+
+    component = renderComponent(RouteHeader, props);
+    expect(component.find('.trip_header_location_info')).to.have.text('Pune→Delhi →Pune10 flights found');
+  });
+
   it('should render the title for a searched one-way query with a single flight returned', () => {
     const props = {
       activeTab: 'one-way',
@@ -44,5 +60,36 @@ describe('RouteHeader', () => {
 
     component = renderComponent(RouteHeader, props);
     expect(component.find('.trip_header_location_info')).to.have.text('Pune →Delhi1 flight found');
+  });
+
+  it('should render the title for a searched return query with multiple flights returned', () => {
+    const departureDate = moment();
+    const returnDate = moment();
+    const props = {
+      activeTab: 'return',
+      isSearched: true,
+      results: 1,
+      flight: flights[0],
+      departureDate,
+      returnDate
+    };
+
+    component = renderComponent(RouteHeader, props);
+    expect(component.find('.trip_header_location_info')).to.have.text('Pune→Delhi →Pune1 flight found');
+  });
+
+  it('should render the appropriate departure date', () => {
+    const departureDate = moment();
+    const props = {
+      activeTab: 'one-way',
+      isSearched: true,
+      results: 1,
+      flight: flights[0],
+      departureDate,
+      returnDate: undefined
+    };
+
+    component = renderComponent(RouteHeader, props);
+    expect(component.find('.trip_header_date')).to.have.text(`Departure date: ${departureDate.format('MMM Do YYYY')}`);
   });
 });

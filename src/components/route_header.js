@@ -33,14 +33,14 @@ const RouteHeader = ({ activeTab, isSearched, flight, results, departureDate, re
       } else {
         return (
           <div className="trip_header">
-            <h3>
+            <h3 className="trip_header_location_info">
               {flight.origin}
               <span>&#8594;</span>
               {flight.destination} <span>&#8594;</span>
               {flight.origin}
               <small className="flight_results">{results} {plural} found</small>
             </h3>
-            <h3>Departure date: <small className="flight_results">{departureDisplay}</small></h3>
+            <h3 className="trip_header_date">Departure date: <small className="flight_results">{departureDisplay}</small></h3>
             <h3>Return date: <small className="flight_results">{returnDisplay}</small></h3>
           </div>
         );
