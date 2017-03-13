@@ -161,6 +161,7 @@ class ReturnForm extends Component {
           <div className="group">
             <label htmlFor="routeOneFare">Choose route one fare</label>
             <input
+              type="range"
               onChange={this.handleFareChange('routeOneFare')}
               min={5000}
               max={20000}
@@ -173,6 +174,7 @@ class ReturnForm extends Component {
           <div className="group">
             <label htmlFor="routeTwoFare">Choose route two fare</label>
             <input
+              type="range"
               onChange={this.handleFareChange('routeTwoFare')}
               min={5000}
               max={20000}

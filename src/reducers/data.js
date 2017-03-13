@@ -39,6 +39,7 @@ export default function (state = initialState, action) {
       ...state,
       searchResults: filterReturnFlights(action.payload, state.activeTab),
       isSearched: true,
+      departureDate: action.payload.departureDate,
       returnDate: action.payload.returnDate
     };
 

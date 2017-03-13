@@ -17,7 +17,10 @@ const ReturnFlightDetail = ({ customClass, flight }) => {
       </div>
       <div className={`${customClass}_origin`}>
         <span className="block">{formatHourMinute(departureTime)}</span>
-        <span className="small-gray">{origin} &#8594; {destination}</span>
+        {customClass === 'route_one' ?
+          <span className="small-gray">{origin} &#8594; {destination}</span> :
+          <span className="small-gray">{destination} &#8594; {origin}</span>
+        }
       </div>
       <div className={`${customClass}_destination`}>
         <span className="block">{formatHourMinute(arrivalTime)}</span>

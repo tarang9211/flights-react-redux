@@ -8,8 +8,10 @@ describe('OneWayFlightDetail Component', () => {
     flightCode: 'PD - 202',
     origin: 'Pune',
     destination: 'Delhi',
-    fare: 5000
+    fare: 5000,
+    duration: '2h 05m'
   };
+
 
   beforeEach(() => {
     component = renderComponent(OneWayFlightDetail, props);
@@ -33,5 +35,9 @@ describe('OneWayFlightDetail Component', () => {
 
   it('should display the appropriate fare', () => {
     expect(component.find('.fare_info .block .fare_amount')).to.have.text('5000');
+  });
+
+  it('should display appropriate duration', () => {
+    expect(component.find('.duration_info .block')).to.have.text('2h 05m');
   });
 });
