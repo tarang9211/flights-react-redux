@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react';
 
-const RouteHeader = ({ activeTab, isSearched, flight }) => {
+const RouteHeader = ({ activeTab, isSearched, flight, results }) => {
+  const plural = results === 1 ? 'flight' : 'flights';
   if (!isSearched) {
     return (
       <div className="listing_header_all">
@@ -11,11 +12,19 @@ const RouteHeader = ({ activeTab, isSearched, flight }) => {
     if (flight) {
       if (activeTab === 'one-way') {
         return (
-          <h3>{flight.origin} {flight.destination}</h3>
+          <div className="trip_header">
+            <h3>{flight.origin} <span>&#8594;</span>{flight.destination}</h3>
+            <h6>{results} {plural} found</h6>
+          </div>
         );
       } else {
         return (
-          <h3>{flight.origin} {flight.destination} - {activeTab}</h3>
+          <div className="trip_header">
+            <div className="trip_header">
+              <h3>{flight.origin} <span>&#8594;</span>{flight.destination} <span>&#8594;</span> {flight.origin}</h3>
+              <h6>{results} {plural} found</h6>
+            </div>
+          </div>
         );
       }
     } else {
@@ -32,6 +41,10 @@ RouteHeader.propTypes = {
   isSearched: PropTypes.bool,
 
   activeTab: PropTypes.string,
+
+  flight: PropTypes.object,
+
+  results: PropTypes.number
 }
 
 

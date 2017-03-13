@@ -164,6 +164,23 @@ button:focus {
   flex: 1;
 }
 
+.container_header {
+  height: 100%;
+  border-bottom: 1px solid #b9b9b9;
+}
+
 .listing_header_all h3 {
   text-align: center;
+}
+
+.trip_header {
+  text-align: center;
+}
+
+.trip_header h3, .trip_header h6 {
+  display: inline-block;
+}
+
+.trip_header h3 {
+  margin-right: 1em;
 }
