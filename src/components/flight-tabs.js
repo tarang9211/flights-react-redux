@@ -6,8 +6,8 @@ import OneWayForm from './one-way-form';
 import ReturnForm from './return-form';
 
 class FlightTabs extends Component {
-  handleTabSelect = (index, last) => {
-    const activeTab = index === 0 ? 'one-way': 'return';
+  handleTabSelect = (index) => {
+    const activeTab = index === 0 ? 'one-way' : 'return';
     this.props.setTab(activeTab);
   }
 

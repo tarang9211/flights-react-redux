@@ -9,9 +9,9 @@ class FlightList extends Component {
   }
 
   renderFlightList = () => {
-    const { activeTab, searchResults} = this.props;
+    const { activeTab, searchResults } = this.props;
 
-    return searchResults.map(flight => {
+    return searchResults.map((flight) => {
       if (flight.type === activeTab) {
         if (flight.type === 'one-way') {
           return (
@@ -19,13 +19,13 @@ class FlightList extends Component {
               key={flight.id}
               origin={flight.origin}
               destination={flight.destination}
-              flight_code={flight.flight_code}
+              flightCode={flight.flight_code}
               duration={flight.duration}
               arrival={flight.arrivalTime}
               fare={flight.fare}
             />
-        );
-        } else {
+          );
+        } else {  // eslint-disable-line
           return (
             <div className="return_list_item" key={flight.id}>
               <ReturnFlightDetail
@@ -65,7 +65,7 @@ class FlightList extends Component {
       </div>
     );
   }
-};
+}
 
 const mapStateToProps = state => ({
   searchResults: state.flights.searchResults,
@@ -73,6 +73,6 @@ const mapStateToProps = state => ({
   isSearched: state.flights.isSearched,
   departureDate: state.flights.departureDate,
   returnDate: state.flights.returnDate
-})
+});
 
 export default connect(mapStateToProps)(FlightList);

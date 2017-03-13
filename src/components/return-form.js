@@ -23,36 +23,36 @@ class ReturnForm extends Component {
     this.destinations = [];
   }
 
-  handleOriginSelect = origin => {
-    this.setState({ origin });
-    this.destinations = airports.filter(item => item.name !== origin);
-  }
-
-  handleDestinationSelect = destination => {
-    this.setState({ destination });
-  }
-
-  handlePassengerChange = e => {
-    this.setState({ numberOfPassengers: e.target.value });
-  }
-
-  handleFareChange = state => e => {
-    this.setState({ [state]: parseInt(e.target.value) });
-  }
-
-  setDepartureDate = e => {
+  setDepartureDate = (e) => {
     this.setState({
       departureDate: moment(e.target.value).format('DD MM YYYY')
     });
   }
 
-  setReturnDate = e => {
+  setReturnDate = (e) => {
     this.setState({
       returnDate: moment(e.target.value).format('DD MM YYYY')
-    })
+    });
   }
 
-  handleSubmit = e => {
+  handleOriginSelect = (origin) => {
+    this.setState({ origin });
+    this.destinations = airports.filter(item => item.name !== origin);
+  }
+
+  handleDestinationSelect = (destination) => {
+    this.setState({ destination });
+  }
+
+  handlePassengerChange = (e) => {
+    this.setState({ numberOfPassengers: e.target.value });
+  }
+
+  handleFareChange = state => (e) => {
+    this.setState({ [state]: parseInt(e.target.value) });
+  }
+
+  handleSubmit = (e) => {
     e.preventDefault();
     if (this.state.origin === this.state.destination) {
       this.setState({ origin: '', destination: '' });
@@ -80,75 +80,75 @@ class ReturnForm extends Component {
 
   render() {
     return (
-      <div className='form-container'>
+      <div className="form-container">
         <form onSubmit={this.handleSubmit}>
 
           <div className="group">
             <Autocomplete
-                autoHighlight
-                value={this.state.origin}
-                items={airports}
-                onChange={(event, value) => this.setState({ origin: value })}
-                onSelect={this.handleOriginSelect}
-                renderItem={(item, isHighlighted) => (
-                  <div
-                    style={isHighlighted ? styles.highlightedItem : styles.item}
-                    key={item.abbr}
-                  >{item.name}
-                  </div>
-                  )}
-                getItemValue={item => item.name}
-                shouldItemRender={matchStateToTerm}
-                inputProps={{ placeholder: 'Enter your origin', required: true }}
-              />
+              autoHighlight
+              value={this.state.origin}
+              items={airports}
+              onChange={(event, value) => this.setState({ origin: value })}
+              onSelect={this.handleOriginSelect}
+              renderItem={(item, isHighlighted) => (
+                <div
+                  style={isHighlighted ? styles.highlightedItem : styles.item}
+                  key={item.abbr}
+                >{item.name}
+                </div>
+                )}
+              getItemValue={item => item.name}
+              shouldItemRender={matchStateToTerm}
+              inputProps={{ placeholder: 'Enter your origin', required: true }}
+            />
           </div>
 
           <div className="group">
             <Autocomplete
-                autoHighlight
-                value={this.state.destination}
-                items={this.destinations}
-                onChange={(event, value) => this.setState({ destination: value })}
-                onSelect={this.handleDestinationSelect}
-                renderItem={(item, isHighlighted) => (
-                  <div
-                    style={isHighlighted ? styles.highlightedItem : styles.item}
-                    key={item.abbr}
-                  >{item.name}
-                  </div>
-                  )}
-                getItemValue={item => item.name}
-                shouldItemRender={matchStateToTerm}
-                inputProps={{ placeholder: 'Enter your destination', required: true }}
-              />
+              autoHighlight
+              value={this.state.destination}
+              items={this.destinations}
+              onChange={(event, value) => this.setState({ destination: value })}
+              onSelect={this.handleDestinationSelect}
+              renderItem={(item, isHighlighted) => (
+                <div
+                  style={isHighlighted ? styles.highlightedItem : styles.item}
+                  key={item.abbr}
+                >{item.name}
+                </div>
+                )}
+              getItemValue={item => item.name}
+              shouldItemRender={matchStateToTerm}
+              inputProps={{ placeholder: 'Enter your destination', required: true }}
+            />
           </div>
 
           <div className="group">
-            <label>
+            <label htmlFor="departureDate">
               <span>Departure Date:</span>
             </label>
-              <input
-                type="date"
-                onChange={this.setDepartureDate}
-                min={moment().format('YYYY-MM-DD')}
-                required
-              />
+            <input
+              type="date"
+              onChange={this.setDepartureDate}
+              min={moment().format('YYYY-MM-DD')}
+              required
+            />
           </div>
 
           <div className="group">
-            <label>
+            <label htmlFor="returnDate">
               <span>Return Date:</span>
             </label>
-              <input
-                type="date"
-                onChange={this.setReturnDate}
-                min={moment().format('YYYY-MM-DD')}
-                required
-              />
+            <input
+              type="date"
+              onChange={this.setReturnDate}
+              min={moment().format('YYYY-MM-DD')}
+              required
+            />
           </div>
 
           <div className="group">
-            <label>Enter number of passengers</label>
+            <label htmlFor="numberOfPassengers">Enter number of passengers</label>
             <input
               type="number"
               value={this.state.numberOfPassengers}
@@ -159,10 +159,9 @@ class ReturnForm extends Component {
           </div>
 
           <div className="group">
-            <label>Choose route one fare</label>
+            <label htmlFor="routeOneFare">Choose route one fare</label>
             <input
-              type="range"
-              onChange={this.handleFareChange("routeOneFare")}
+              onChange={this.handleFareChange('routeOneFare')}
               min={5000}
               max={20000}
               step={500}
@@ -172,10 +171,9 @@ class ReturnForm extends Component {
           </div>
 
           <div className="group">
-            <label>Choose route two fare</label>
+            <label htmlFor="routeTwoFare">Choose route two fare</label>
             <input
-              type="range"
-              onChange={this.handleFareChange("routeTwoFare")}
+              onChange={this.handleFareChange('routeTwoFare')}
               min={5000}
               max={20000}
               step={500}
@@ -192,9 +190,9 @@ class ReturnForm extends Component {
       </div>
     );
   }
-};
+}
 
 export default connect(
   null,
   { filterReturnSearchResults }
-)(ReturnForm)
+)(ReturnForm);

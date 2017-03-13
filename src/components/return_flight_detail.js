@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import { formatHourMinute } from '../utils';
 
-const ReturnFlightDetail = ({ customClass, flight}) => {
+const ReturnFlightDetail = ({ customClass, flight }) => {
   const { origin, destination } = flight;
-  const flight_code = flight[`${customClass}_code`];
-  const flight_fare = flight[`${customClass}_fare`];
+  const flightCode = flight[`${customClass}_code`];
+  const flightFare = flight[`${customClass}_fare`];
   const departureTime = flight[`${customClass}_departure`];
   const arrivalTime = flight[`${customClass}_arrival`];
   const duration = flight[`${customClass}_duration`];
@@ -12,7 +12,7 @@ const ReturnFlightDetail = ({ customClass, flight}) => {
   return (
     <div className={`${customClass}_info`}>
       <div className={`${customClass}_code`}>
-        <span className="block">{flight_code}</span>
+        <span className="block">{flightCode}</span>
         <span className="small-gray">Flight no</span>
       </div>
       <div className={`${customClass}_origin`}>
@@ -24,7 +24,7 @@ const ReturnFlightDetail = ({ customClass, flight}) => {
         <span className="small-gray">{duration}</span>
       </div>
       <div className={`${customClass}_fare`}>
-        <span className="block">&#8377; {flight_fare}</span>
+        <span className="block">&#8377; {flightFare}</span>
       </div>
       <div className="book_return">
         <button className="button-book">Book</button>
@@ -34,7 +34,9 @@ const ReturnFlightDetail = ({ customClass, flight}) => {
 };
 
 ReturnFlightDetail.propTypes = {
+  customClass: PropTypes.string,
 
+  flight: PropTypes.object
 };
 
 export default ReturnFlightDetail;

@@ -3,7 +3,7 @@ import moment from 'moment';
 
 const RouteHeader = ({ activeTab, isSearched, flight, results, departureDate, returnDate }) => {
   const departureDisplay = moment(departureDate, 'DD MM YYYY').format('MMM Do YYYY');
-  const returnDisplay = moment(returnDate, 'DD MM YYYY').format('MMM Do YYYY')
+  const returnDisplay = moment(returnDate, 'DD MM YYYY').format('MMM Do YYYY');
   const plural = results === 1 ? 'flight' : 'flights';
 
   if (!isSearched) {
@@ -28,7 +28,10 @@ const RouteHeader = ({ activeTab, isSearched, flight, results, departureDate, re
         return (
           <div className="trip_header">
             <h3>
-              {flight.origin} <span>&#8594;</span>{flight.destination} <span>&#8594;</span> {flight.origin}
+              {flight.origin}
+              <span>&#8594;</span>
+              {flight.destination} <span>&#8594;</span>
+              {flight.origin}
               <small className="flight_results">{results} {plural} found</small>
             </h3>
             <h3>Departure date: <small className="flight_results">{departureDisplay}</small></h3>
