@@ -40,4 +40,8 @@ describe('OneWayFlightDetail Component', () => {
   it('should display appropriate duration', () => {
     expect(component.find('.duration_info .block')).to.have.text('2h 05m');
   });
+
+  it('should display the book button', () => {
+    expect(component.find('.book_one_way .button-book')).to.exist;
+  });
 });

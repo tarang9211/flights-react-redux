@@ -41,7 +41,7 @@ module.exports = {
     "no-lonely-if": [0],
     "radix": [0],
     "arrow-body-style": ["warn", "as-needed"],
-    "no-else-return": [1],
+    "no-else-return": [0],
     "array-callback-return": [1],
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "react/forbid-prop-types": [1, { "forbid": ['any'] }],

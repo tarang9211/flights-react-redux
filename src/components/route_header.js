@@ -2,8 +2,14 @@ import React, { PropTypes } from 'react';
 import moment from 'moment';
 
 const RouteHeader = ({ activeTab, isSearched, flight, results, departureDate, returnDate }) => {
-  const departureDisplay = moment(departureDate, 'DD MM YYYY').format('MMM Do YYYY');
-  const returnDisplay = moment(returnDate, 'DD MM YYYY').format('MMM Do YYYY');
+  let departureDisplay;
+  let returnDisplay;
+  if (departureDate) {
+    departureDisplay = moment(departureDate, 'DD MM YYYY').format('MMM Do YYYY');
+  }
+  if (returnDate) {
+    returnDisplay = moment(returnDate, 'DD MM YYYY').format('MMM Do YYYY');
+  }
   const plural = results === 1 ? 'flight' : 'flights';
 
   if (!isSearched) {
