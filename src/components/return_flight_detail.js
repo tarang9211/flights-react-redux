@@ -27,7 +27,9 @@ const ReturnFlightDetail = ({ customClass, flight }) => {
         <span className="small-gray">{duration}</span>
       </div>
       <div className={`${customClass}_fare`}>
-        <span className="block">&#8377; {flightFare}</span>
+        <span className="block">&#8377;
+          <span className="fare_amount">{flightFare}</span>
+        </span>
       </div>
       <div className="book_return">
         <button className="button-book">Book</button>
