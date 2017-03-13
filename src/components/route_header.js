@@ -1,7 +1,11 @@
 import React, { PropTypes } from 'react';
+import moment from 'moment';
 
-const RouteHeader = ({ activeTab, isSearched, flight, results }) => {
+const RouteHeader = ({ activeTab, isSearched, flight, results, departureDate, returnDate }) => {
+  const departureDisplay = moment(departureDate, 'DD MM YYYY').format('MMM Do YYYY');
+  const returnDisplay = moment(returnDate, 'DD MM YYYY').format('MMM Do YYYY')
   const plural = results === 1 ? 'flight' : 'flights';
+
   if (!isSearched) {
     return (
       <div className="listing_header_all">
@@ -13,17 +17,22 @@ const RouteHeader = ({ activeTab, isSearched, flight, results }) => {
       if (activeTab === 'one-way') {
         return (
           <div className="trip_header">
-            <h3>{flight.origin} <span>&#8594;</span>{flight.destination}</h3>
-            <h6>{results} {plural} found</h6>
+            <h3>
+              {flight.origin} <span>&#8594;</span>{flight.destination}
+              <small className="flight_results">{results} {plural} found</small>
+            </h3>
+            <h3>Departure date: <small className="flight_results">{departureDisplay}</small></h3>
           </div>
         );
       } else {
         return (
           <div className="trip_header">
-            <div className="trip_header">
-              <h3>{flight.origin} <span>&#8594;</span>{flight.destination} <span>&#8594;</span> {flight.origin}</h3>
-              <h6>{results} {plural} found</h6>
-            </div>
+            <h3>
+              {flight.origin} <span>&#8594;</span>{flight.destination} <span>&#8594;</span> {flight.origin}
+              <small className="flight_results">{results} {plural} found</small>
+            </h3>
+            <h3>Departure date: <small className="flight_results">{departureDisplay}</small></h3>
+            <h3>Return date: <small className="flight_results">{returnDisplay}</small></h3>
           </div>
         );
       }
@@ -35,7 +44,7 @@ const RouteHeader = ({ activeTab, isSearched, flight, results }) => {
       );
     }
   }
-}
+};
 
 RouteHeader.propTypes = {
   isSearched: PropTypes.bool,
@@ -44,8 +53,12 @@ RouteHeader.propTypes = {
 
   flight: PropTypes.object,
 
-  results: PropTypes.number
-}
+  results: PropTypes.number,
+
+  departureDate: PropTypes.string,
+
+  returnDate: PropTypes.string
+};
 
 
 export default RouteHeader;

@@ -6,8 +6,6 @@ import ReturnFlightDetail from './return_flight_detail';
 
 class FlightList extends Component {
   componentWillMount() {
-    console.log('component mounted ----');
-    console.log(this.props);
   }
 
   renderFlightList = () => {
@@ -48,7 +46,9 @@ class FlightList extends Component {
   render() {
     const { activeTab, isSearched } = this.props;
     const flight = this.props.searchResults[0];
-    const results = this.props.searchResults.length
+    const results = this.props.searchResults.length;
+    const departureDate = this.props.departureDate;
+    const returnDate = this.props.returnDate;
     return (
       <div className="flight-list-container">
         <div className="col-12 container_header">
@@ -57,6 +57,8 @@ class FlightList extends Component {
             isSearched={isSearched}
             flight={flight}
             results={results}
+            departureDate={departureDate}
+            returnDate={returnDate}
           />
         </div>
         {this.renderFlightList()}
@@ -68,7 +70,9 @@ class FlightList extends Component {
 const mapStateToProps = state => ({
   searchResults: state.flights.searchResults,
   activeTab: state.flights.activeTab,
-  isSearched: state.flights.isSearched
+  isSearched: state.flights.isSearched,
+  departureDate: state.flights.departureDate,
+  returnDate: state.flights.returnDate
 })
 
 export default connect(mapStateToProps)(FlightList);

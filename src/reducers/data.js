@@ -22,21 +22,24 @@ export default function (state = initialState, action) {
     case SET_TAB:
       return {
         ...state,
-        activeTab: action.activeTab
+        activeTab: action.activeTab,
+        searchResults: state.isSearched === false ? state.searchResults : []
       };
 
     case FILTER_ONE_WAY_RESULTS:
       return {
         ...state,
         searchResults: filterOneWayFlights(action.payload, state.activeTab),
-        isSearched: true
+        isSearched: true,
+        departureDate: action.payload.departureDate
       };
 
     case FILTER_RETURN_RESULTS:
       return {
         ...state,
         searchResults: filterReturnFlights(action.payload, state.activeTab),
-        isSearched: true
+        isSearched: true,
+        returnDate: action.payload.returnDate
       };
 
     default:

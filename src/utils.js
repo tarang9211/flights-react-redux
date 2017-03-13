@@ -3,7 +3,6 @@ import { flights } from './data';
 
 
 export const filterOneWayFlights = (filter, type) => {
-  console.log(filter);
   return flights.filter(flight => {
     const sameDepartureDate = flight.departureDate === filter.departureDate;
     const sameOrigin = flight.origin === filter.origin;
@@ -15,7 +14,6 @@ export const filterOneWayFlights = (filter, type) => {
 };
 
 export const filterReturnFlights = (filter, type) => {
-  console.log(filter);
   return flights.filter(flight => {
     const sameDepartureDate = flight.departureDate === filter.departureDate;
     const sameReturnDate = flight.returnDate === filter.returnDate;

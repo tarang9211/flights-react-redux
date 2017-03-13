@@ -24,7 +24,6 @@ class OneWayForm extends Component {
   handleOriginSelect = origin => {
     this.setState({ origin });
     this.destinations = airports.filter(item => item.name !== origin);
-    console.log('destinations ----', this.destinations);
   }
 
   handleDestinationSelect = destination => {
@@ -32,7 +31,6 @@ class OneWayForm extends Component {
   }
 
   handleSliderChange = e => {
-    console.log('fare ---', e.target.value);
     this.setState({ fare: parseInt(e.target.value) });
   }
 
