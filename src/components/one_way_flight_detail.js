@@ -6,15 +6,15 @@ const OneWayFlightDetail = ({ flight_code, departureDate, origin, destination, f
     <div className="one_way_list_item">
       <div className="code_info">
           <span className="block">{flight_code}</span>
-          <span><small>Flight no.</small></span>
+          <span className="small-gray">Flight no.</span>
       </div>
       <div className="origin_info">
         <span className="block">{formatHourMinute(departureDate)}</span>
-        <span>{origin}</span>
+        <span className="small-gray">{origin}</span>
       </div>
       <div className="destination_info">
         <span className="block">{formatHourMinute(arrival)}</span>
-        <span>{destination}</span>
+        <span className="small-gray">{destination}</span>
       </div>
       <div className="duration_info">
         <span className="block">{duration}</span>
