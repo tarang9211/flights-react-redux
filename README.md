@@ -5,6 +5,8 @@
 <br />
 
 ### Introduction
+The app is hosted on Heroku and can be found [here](https://flights-react-redux.herokuapp.com/)
+
 flights-react-redux is a simple flight search engine app that lets a user search for one-way and return flights.
 
 Since a public Flight API is not used, the data has been manually crafted for the purpose of this search engine.
