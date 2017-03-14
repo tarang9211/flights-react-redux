@@ -145,7 +145,9 @@ class OneWayForm extends Component {
               step={500}
               value={this.state.fare}
             />
-            <p>Max price: &#8377; {this.state.fare}</p>
+            <p>
+              <small className="gray">Max price: </small>&#8377; {this.state.fare}
+            </p>
           </div>
 
           <div className="group actions">

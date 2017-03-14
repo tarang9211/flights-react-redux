@@ -168,7 +168,7 @@ class ReturnForm extends Component {
               step={500}
               value={this.state.routeOneFare}
             />
-            <p>Max price: &#8377; {this.state.routeOneFare}</p>
+            <p><small className="gray">Max price for route-one: </small>&#8377; {this.state.routeOneFare}</p>
           </div>
 
           <div className="group">
@@ -181,7 +181,7 @@ class ReturnForm extends Component {
               step={500}
               value={this.state.routeTwoFare}
             />
-            <p>Max price: &#8377; {this.state.routeTwoFare}</p>
+            <p><small className="gray">Max price for route-two: </small>&#8377; {this.state.routeTwoFare}</p>
           </div>
 
           <div className="group actions">
