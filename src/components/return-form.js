@@ -15,7 +15,7 @@ class ReturnForm extends Component {
       destination: '',
       departureDate: '',
       returnDate: '',
-      numberOfPassengers: 0,
+      numberOfPassengers: 1,
       routeOneFare: 20000,
       routeTwoFare: 20000
     };
