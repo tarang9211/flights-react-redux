@@ -11,6 +11,9 @@
     "postinstall": "./node_modules/webpack/bin/webpack.js -p",
     "lint": "./node_modules/.bin/eslint src test"
   },
+  "engines": {
+    "node": ">= 4.0.0"
+  },
   "author": "",
   "license": "ISC",
   "devDependencies": {
