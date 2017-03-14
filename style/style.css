@@ -59,6 +59,11 @@ button:focus {
   text-align: center;
 }
 
+.header h1 {
+  color: #7e42ce;
+  text-shadow: 0px 1px 1px #6d6d6d;
+}
+
 .form-container {
   padding-left: 3em;
 }

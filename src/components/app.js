@@ -5,7 +5,7 @@ import FlightList from './flight-list';
 const App = () => (
   <div className="app-container">
     <div className="header">
-      <h3>Flight Search Engine</h3>
+      <h1>Flight Search Engine</h1>
     </div>
     <div className="content">
       <div className="row">
