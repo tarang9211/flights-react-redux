@@ -7,7 +7,9 @@
 ### Introduction
 flights-react-redux is a simple flight search engine app that lets a user search for one-way and return flights.
 
-Since a Flight API, the data has been manually crafted for the purpose of this search engine.
+Since a public Flight API is not used, the data has been manually crafted for the purpose of this search engine.
+
+The app has been built with a TDD based approach along with Continuous Integration with Travis CI and Continuous Deployment with Heroku.
 
 
 ### Instructions - Using this app
